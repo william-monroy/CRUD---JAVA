@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="calificaciones" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="df6bbc72-2695-4f9a-97c9-9fdd9b168b48">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="48"/>
+	<property name="ireport.y" value="17"/>
+	<queryString>
+		<![CDATA[SELECT
+     alumnos.`idalumnos` AS alumnos_idalumnos,
+     alumnos.`nombre` AS alumnos_nombre,
+     alumnos.`apellidos` AS alumnos_apellidos,
+     alumnos.`materia` AS alumnos_materia,
+     alumnos.`calificacion` AS alumnos_calificacion,
+     alumnos.`estatus` AS alumnos_estatus
+FROM
+     `alumnos` alumnos]]>
+	</queryString>
+	<field name="alumnos_idalumnos" class="java.lang.Integer"/>
+	<field name="alumnos_nombre" class="java.lang.String"/>
+	<field name="alumnos_apellidos" class="java.lang.String"/>
+	<field name="alumnos_materia" class="java.lang.String"/>
+	<field name="alumnos_calificacion" class="java.lang.Double"/>
+	<field name="alumnos_estatus" class="java.lang.String"/>
+	<variable name="alumnos_idalumnos_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{alumnos_idalumnos}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="240" y="24" width="316" height="38" uuid="a65fe38c-eadc-47af-a432-1aa4634f011d"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CALIFICACIONES DE ALUMNOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="32" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="37" width="802" height="1" uuid="1d63b1aa-a6bc-4783-b6c4-38334fea5f85"/>
+			</line>
+			<staticText>
+				<reportElement x="15" y="9" width="72" height="20" uuid="cf88fb88-965b-43fe-ba02-8e6659707b88"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID ALUMNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="9" width="100" height="20" uuid="5cb05c63-08dd-419f-9838-ab48003e7243"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="571" y="9" width="100" height="20" uuid="37cdf847-6b5a-4efa-8141-39e61fd77eb0"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CALIFICACION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="234" y="9" width="100" height="20" uuid="5f211a34-dac8-481e-924f-62c8ae3f52f4"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APELLIDOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="9" width="84" height="20" uuid="bbc78253-3672-4ff5-b5cb-8d90eee43cab"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MATERIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="683" y="9" width="83" height="20" uuid="5ac5ffd4-2850-446f-839e-455e7bc38de9"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTATUS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="6" width="72" height="20" uuid="1a248fb6-4a02-4dbf-b10b-775c8cad7ee6"/>
+				<textFieldExpression><![CDATA[$F{alumnos_idalumnos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="6" width="120" height="20" uuid="b6da72b3-b849-47a1-8d8c-c5986fdb704c"/>
+				<textFieldExpression><![CDATA[$F{alumnos_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="234" y="6" width="203" height="20" uuid="bdee5dfe-a6a8-4942-a5e3-6f2400578cc3"/>
+				<textFieldExpression><![CDATA[$F{alumnos_apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="6" width="100" height="20" uuid="d6fde99e-494c-42fc-9142-582f47dfae4b"/>
+				<textFieldExpression><![CDATA[$F{alumnos_materia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="571" y="6" width="100" height="20" uuid="b2b3f352-0f7e-44fe-a534-1a933c90aac9"/>
+				<textFieldExpression><![CDATA[$F{alumnos_calificacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="683" y="6" width="100" height="20" uuid="578a25ed-482a-4062-8f31-d21be244d4b3"/>
+				<textFieldExpression><![CDATA[$F{alumnos_estatus}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="654" y="0" width="80" height="20" uuid="b39eb133-ffbe-40fa-afe9-c1ab1a4ba15f"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="745" y="0" width="40" height="20" uuid="cbbb667c-a391-450f-9832-2c3c192ca18e"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="17" y="0" width="100" height="20" uuid="7e86996b-6601-46e1-b4c1-77ed0e0219d5"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
